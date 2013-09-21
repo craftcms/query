@@ -1,0 +1,47 @@
+{% extends "_layouts/cp" %}
+{% set title = "Query"|t %}
+
+{% import "_includes/forms" as forms %}
+
+
+{% set content %}
+	<form method="post" action="" accept-charset="UTF-8" class="field">
+		<input type="hidden" name="action" value="query/execute">
+
+		{{ forms.textarea({
+			name: 'sql',
+			class: 'nicetext code',
+			value: (sql is defined ? sql : null),
+			first: true,
+			autofocus: true
+		}) }}
+
+		<input type="submit" class="btn submit" value="Execute">
+	</form>
+
+	{% if result is defined %}
+		{% if result | length %}
+			<table class="data">
+				<thead>
+					<tr>
+						{% for column in result[0] | keys %}
+							<th scope="col">{{ column }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in result %}
+						<tr>
+							{% for cell in row %}
+								<td style="vertical-align: top"><pre>{{ cell }}</pre></td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		{% else %}
+			<p>No results.</p>
+		{% endif %}
+	{% endif %}
+
+{% endset %}
