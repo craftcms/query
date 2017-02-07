@@ -6,6 +6,8 @@
 
 {% set content %}
 	<form method="post" action="" accept-charset="UTF-8" class="field">
+		{{ getCsrfInput() }}
+
 		<input type="hidden" name="action" value="query/execute">
 
 		{{ forms.textarea({
