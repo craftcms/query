@@ -8,42 +8,42 @@ $form.on('submit', function(ev) {
 
         if (textStatus == 'success') {
 
-            if (response.result.length) {
-                var html = '<table class="data">' +
-                    '<thead>' +
-                    '<tr>';
+            if (response.success) {
 
-                for (var key in response.result[0]) {
-                    html += '<th scope="col">' +
-                        key +
-                        '</th>';
-                }
+                if (response.result.length) {
+                    var html = '<table class="data">' +
+                        '<thead>' +
+                        '<tr>';
 
-                html += '</tr>' +
-                    '</thead>' +
-                    '</tbody>';
-
-                for (var i = 0; i < response.result.length; i++) {
-                    html += '<tr>';
-                    for (var cell in response.result[i]) {
-                        html += '<td style="vertical-align: top"><pre>' +
-                            response.result[i][cell] +
-                            '</pre></td>';
+                    for (var key in response.result[0]) {
+                        html += '<th scope="col">' +
+                            key +
+                            '</th>';
                     }
-                    html += '</tr>';
+
+                    html += '</tr>' +
+                        '</thead>' +
+                        '</tbody>';
+
+                    for (var i = 0; i < response.result.length; i++) {
+                        html += '<tr>';
+                        for (var cell in response.result[i]) {
+                            html += '<td style="vertical-align: top"><pre>' +
+                                response.result[i][cell] +
+                                '</pre></td>';
+                        }
+                        html += '</tr>';
+                    }
+
+                    html += '<tbody>' +
+                        '</table>';
+
+                    $results.html(html);
                 }
-
-                html += '<tbody>' +
-                    '</table>';
-
-
-                $results.html(html);
+            } else {
+                $results.html('<div class="error">' + response.result + '</div>');
             }
-
-
+            
         }
     });
 });
-
-
-console.log('hello');

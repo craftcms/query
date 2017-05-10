@@ -19,15 +19,22 @@ class DefaultController extends Controller
         $this->requirePermission('utility:query');
         $this->requireAcceptsJson();
         $sql = \Craft::$app->getRequest()->getRequiredBodyParam('sql');
+        $success = true;
 
-        if ($sql) {
-            $result = \Craft::$app->getDb()->createCommand($sql)->queryAll();
-        } else {
-            $result = [];
+        try {
+            if ($sql) {
+                $result = \Craft::$app->getDb()->createCommand($sql)->queryAll();
+            } else {
+                $result = [];
+            }
+        } catch(\Exception $e) {
+            $result = $e->getMessage();
+            $success = false;
         }
 
         return $this->asJson([
-            'result' => $result
+            'result' => $result,
+            'success' => $success,
         ]);
     }
 }
