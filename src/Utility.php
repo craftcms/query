@@ -49,7 +49,7 @@ class Utility extends \craft\base\Utility
      */
     public static function contentHtml(): string
     {
-        return Craft::$app->getView()->renderTemplate('query/index');
+        return Craft::$app->getView()->renderTemplate('query/_index');
     }
 
 }
