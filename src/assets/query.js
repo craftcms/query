@@ -43,7 +43,7 @@ $form.on('submit', function(ev) {
             } else {
                 $results.html('<div class="error">' + response.result + '</div>');
             }
-            
+
         }
     });
 });
