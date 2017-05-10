@@ -9,6 +9,11 @@ use craft\web\Controller;
  */
 class DefaultController extends Controller
 {
+    /**
+     * For executing the database query.
+     *
+     * @return \yii\web\Response
+     */
     public function actionExecute()
     {
         $this->requirePermission('utility:query');

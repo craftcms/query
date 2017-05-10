@@ -10,10 +10,10 @@ namespace craft\query;
 use Craft;
 
 /**
- * Migrations represents a Migrations utility.
+ * Query utility for executing database queries in the control panel.
  *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since  3.0
+ * @since  2.0
  */
 class Utility extends \craft\base\Utility
 {
@@ -41,7 +41,7 @@ class Utility extends \craft\base\Utility
      */
     public static function iconPath()
     {
-        return Craft::getAlias('@app/icons/arrow-up.svg');
+        return Craft::getAlias('@app/icons/database.svg');
     }
 
     /**
