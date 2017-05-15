@@ -16,7 +16,10 @@
         }) }}
     </div>
 
-    <input type="submit" class="btn submit" value="Execute">
+    <div class="flex">
+        <input id="query-submit" type="submit" class="btn submit" value="Execute">
+        <div id="query-spinner" class="spinner hidden"></div>
+    </div>
 </form>
 
 <div id="query-result" class="field"></div>
