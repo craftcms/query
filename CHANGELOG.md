@@ -1,7 +1,15 @@
 Changelog
 =========
 
-## Unreleased
+## 2.0.1 - 2017-05-15
+
+### Changed
+- Improved the styling of the SQL results.
+- Added support for a Command/Ctrl + Return keyboard shortcut.
+- Compressed the JavaScript.
+
+### Fixed
+- Fixed the changelog and download URLs.
 
 ## 2.0.0 - 2017-05-10
 
