@@ -26,7 +26,7 @@ class QueryAsset extends AssetBundle
         ];
 
         $this->js = [
-            'query.js',
+            'query'.$this->dotJs(),
         ];
 
         parent::init();
