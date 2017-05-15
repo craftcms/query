@@ -20,29 +20,3 @@
 </form>
 
 <div id="query-result"></div>
-
-{% if result is defined %}
-    {% if result | length %}
-        <table class="data">
-            <thead>
-                <tr>
-                    {% for column in result[0] | keys %}
-                        <th scope="col">{{ column }}</th>
-                    {% endfor %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for row in result %}
-                    <tr>
-                        {% for cell in row %}
-                            <td style="vertical-align: top"><pre>{{ cell }}</pre></td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    {% else %}
-        <p>No results.</p>
-    {% endif %}
-{% endif %}
-
