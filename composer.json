@@ -8,7 +8,6 @@
     "database",
     "cms",
     "craftcms",
-    "json",
     "yii2"
   ],
   "license": "MIT",
