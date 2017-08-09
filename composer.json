@@ -32,12 +32,6 @@
       "craft\\query\\": "src/"
     }
   },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
   "extra": {
     "name": "Query",
     "handle": "query",
