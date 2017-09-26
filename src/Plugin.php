@@ -25,16 +25,8 @@ class Plugin extends \craft\base\Plugin
         parent::init();
 
         // Register our query utility.
-        Event::on(Utilities::class, Utilities::EVENT_REGISTER_UTILITY_TYPES, [$this, 'registerUtility']);
-    }
-
-    /**
-     * Registers the query utility.
-     *
-     * @param RegisterComponentTypesEvent $event
-     */
-    public function registerUtility(RegisterComponentTypesEvent $event)
-    {
-        $event->types[] = Utility::class;
+        Event::on(Utilities::class, Utilities::EVENT_REGISTER_UTILITY_TYPES, function(RegisterComponentTypesEvent $event) {
+            $event->types[] = Utility::class;
+        });
     }
 }
