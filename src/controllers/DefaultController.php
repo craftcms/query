@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      https://craftcms.com/
+ * @link https://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
- * @license   MIT
+ * @license MIT
  */
 
 namespace craft\query\controllers;
@@ -32,7 +32,7 @@ class DefaultController extends Controller
             } else {
                 $result = [];
             }
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             $result = $e->getMessage();
             $success = false;
         }
