@@ -21,4 +21,4 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Query.
 
-4. Go to “Utilities” in the Control Panel to execute queries database queries.
+4. Go to “Utilities” in the Control Panel to execute database queries.
