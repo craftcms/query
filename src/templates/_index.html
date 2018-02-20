@@ -2,7 +2,7 @@
 {% do view.registerAssetBundle("craft\\query\\QueryAsset") %}
 
 <form id="query-form" method="post" action="" accept-charset="UTF-8">
-    {{ getCsrfInput() }}
+    {{ csrfInput() }}
 
     <input type="hidden" name="action" value="query/execute">
     <div class="field first">
