@@ -1,7 +1,6 @@
-Query for Craft CMS
-===================
+# Query for Craft CMS
 
-This plugin enables users to execute database queries and view their results in [Craft CMS](https://craftcms.com).
+This plugin enables users to execute SQL queries and view their results in [Craft CMS](https://craftcms.com).
 
 ## Requirements
 
@@ -21,4 +20,6 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Query.
 
-4. Go to “Utilities” in the Control Panel to execute queries database queries.
+## Usage
+
+Execute SQL queries by navigating to Utilities → Query in the Control Panel.
