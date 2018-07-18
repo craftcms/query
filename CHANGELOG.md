@@ -3,7 +3,7 @@
 ## 2.0.3 - 2018-07-18
 
 ### Changed
-- The utility now show the total number of query results. ([#5](https://github.com/craftcms/query/issues/5))
+- The utility now shows the total number of query results. ([#5](https://github.com/craftcms/query/issues/5))
 
 ## 2.0.2 - 2017-12-04
 
