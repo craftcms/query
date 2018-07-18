@@ -32,7 +32,12 @@ $form.on('submit', function(ev) {
 
             if (response.success) {
                 if (response.result.length) {
-                    html = '<table class="data fullwidth">' +
+                    var resultLabel = response.result.length === 1
+                        ? Craft.t('query', '1 result:')
+                        : Craft.t('query', '{num} results:', {num: response.formattedTotal});
+
+                    html = '<p>' + resultLabel + '</p>' +
+                        '<table class="data fullwidth">' +
                         '<thead>' +
                         '<tr>';
 
@@ -66,7 +71,7 @@ $form.on('submit', function(ev) {
                         '</table>';
                 }
             } else {
-                html = '<p class="error">' + response.result + '</p>'
+                html = '<p class="error">' + response.error + '</p>'
             }
 
             $results.html(html);

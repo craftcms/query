@@ -9,6 +9,7 @@ namespace craft\query;
 
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
+use craft\web\View;
 
 /**
  * QueryAsset class.
@@ -36,5 +37,20 @@ class QueryAsset extends AssetBundle
         ];
 
         parent::init();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function registerAssetFiles($view)
+    {
+        parent::registerAssetFiles($view);
+
+        if ($view instanceof View) {
+            $view->registerTranslations('query', [
+                '1 result:',
+                '{num} results:',
+            ]);
+        }
     }
 }
