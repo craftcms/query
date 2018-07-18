@@ -1,5 +1,4 @@
-Changelog
-=========
+# Release Notes for Query
 
 ## 2.0.2 - 2017-12-04
 
