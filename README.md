@@ -8,21 +8,26 @@ This plugin requires Craft CMS 3.0.0-beta.1 or later.
 
 ## Installation
 
-To install the plugin, follow these instructions.
+You can install this plugin from the Plugin Store or with Composer.
 
-1. Open your terminal and go to your Craft project:
+#### From the Plugin Store
 
-    ```bash
-    cd /path/to/project
-    ```
+Go to the Plugin Store in your project’s Control Panel and search for “Query”. Then click on the “Install” button in its modal window.
 
-2. Then tell Composer to load the plugin:
+#### With Composer
 
-    ```bash
-    composer require craftcms/query
-    ```
+Open your terminal and run the following commands:
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Query.
+```bash
+# go to the project directory
+cd /path/to/my-project.test
+
+# tell Composer to load the plugin
+composer require craftcms/query
+
+# tell Craft to install the plugin
+./craft install/plugin query
+```
 
 ## Usage
 
