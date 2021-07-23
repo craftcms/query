@@ -19,9 +19,6 @@ use yii\base\Event;
  */
 class Plugin extends \craft\base\Plugin
 {
-    // Public Methods
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
@@ -30,8 +27,12 @@ class Plugin extends \craft\base\Plugin
         parent::init();
 
         // Register our query utility.
-        Event::on(Utilities::class, Utilities::EVENT_REGISTER_UTILITY_TYPES, function(RegisterComponentTypesEvent $event) {
-            $event->types[] = Utility::class;
-        });
+        Event::on(
+            Utilities::class,
+            Utilities::EVENT_REGISTER_UTILITY_TYPES,
+            function(RegisterComponentTypesEvent $event) {
+                $event->types[] = Utility::class;
+            }
+        );
     }
 }

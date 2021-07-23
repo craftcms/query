@@ -17,9 +17,6 @@ use Craft;
  */
 class Utility extends \craft\base\Utility
 {
-    // Static
-    // =========================================================================
-
     /**
      * @inheritdoc
      */

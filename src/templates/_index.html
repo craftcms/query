@@ -1,24 +1,24 @@
 {% import "_includes/forms" as forms %}
 
 <form id="query-form" method="post" action="" accept-charset="UTF-8">
-    {{ csrfInput() }}
+  {{ csrfInput() }}
 
-    <input type="hidden" name="action" value="query/execute">
-    <div class="field first">
-        {{ forms.textarea({
-            id: 'query-sql',
-            name: 'sql',
-            class: 'nicetext code',
-            value: (sql is defined ? sql : null),
-            first: true,
-            autofocus: true
-        }) }}
-    </div>
+  <input type="hidden" name="action" value="query/execute">
+  <div class="field first">
+    {{ forms.textarea({
+      id: 'query-sql',
+      name: 'sql',
+      class: 'nicetext code',
+      value: (sql is defined ? sql : null),
+      first: true,
+      autofocus: true
+    }) }}
+  </div>
 
-    <div class="flex">
-        <input id="query-submit" type="submit" class="btn submit" value="Execute">
-        <div id="query-spinner" class="spinner hidden"></div>
-    </div>
+  <div class="flex">
+    <input id="query-submit" type="submit" class="btn submit" value="Execute">
+    <div id="query-spinner" class="spinner hidden"></div>
+  </div>
 </form>
 
 <div id="query-result" class="field"></div>

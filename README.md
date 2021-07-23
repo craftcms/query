@@ -12,7 +12,7 @@ You can install this plugin from the Plugin Store or with Composer.
 
 #### From the Plugin Store
 
-Go to the Plugin Store in your project’s Control Panel and search for “Query”. Then click on the “Install” button in its modal window.
+Go to the Plugin Store in your project’s control panel and search for “Query”. Then press **Install** in its modal window.
 
 #### With Composer
 
@@ -31,4 +31,4 @@ composer require craftcms/query
 
 ## Usage
 
-Execute SQL queries by navigating to Utilities → Query in the Control Panel.
+Execute SQL queries by navigating to **Utilities** → **Query** in the control panel.
