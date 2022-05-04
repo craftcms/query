@@ -49,5 +49,4 @@ class Utility extends \craft\base\Utility
         Craft::$app->getView()->registerAssetBundle(QueryAsset::class);
         return Craft::$app->getView()->renderTemplate('query/_index');
     }
-
 }
