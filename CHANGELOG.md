@@ -1,5 +1,10 @@
 # Release Notes for Query
 
+## 3.0.0 - 2022-05-03
+
+### Added
+- Added Craft 4 compatibility.
+
 ## 2.0.3 - 2018-07-18
 
 ### Changed
