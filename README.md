@@ -4,7 +4,7 @@ This plugin enables users to execute SQL queries and view their results in [Craf
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.1 or later.
+This plugin requires Craft CMS 4.0 or later.
 
 ## Installation
 

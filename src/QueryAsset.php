@@ -33,7 +33,7 @@ class QueryAsset extends AssetBundle
         ];
 
         $this->js = [
-            'query' . $this->dotJs(),
+            'query.min.js',
         ];
 
         parent::init();

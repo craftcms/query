@@ -36,7 +36,7 @@ class Utility extends \craft\base\Utility
     /**
      * @inheritdoc
      */
-    public static function iconPath()
+    public static function iconPath(): ?string
     {
         return Craft::getAlias('@app/icons/database.svg');
     }
