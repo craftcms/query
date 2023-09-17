@@ -1,6 +1,8 @@
 # Query for Craft CMS
 
-This plugin enables users to execute SQL queries and view their results in [Craft CMS](https://craftcms.com).
+This plugin lets users execute SQL queries and view their results in [Craft CMS](https://craftcms.com).
+
+> **WARNING:** This plugin is for development purposes only and should not be installed in a production environment.
 
 ## Requirements
 
