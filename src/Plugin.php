@@ -27,9 +27,14 @@ class Plugin extends \craft\base\Plugin
         parent::init();
 
         // Register our query utility.
+        $eventName = defined(sprintf('%s::EVENT_REGISTER_UTILITY_TYPES', Utilities::class))
+            ? Utilities::EVENT_REGISTER_UTILITY_TYPES // Craft 4
+            /** @phpstan-ignore-next-line */
+            : Utilities::EVENT_REGISTER_UTILITIES; // Craft 5+
+
         Event::on(
             Utilities::class,
-            Utilities::EVENT_REGISTER_UTILITY_TYPES,
+            $eventName,
             function(RegisterComponentTypesEvent $event) {
                 $event->types[] = Utility::class;
             }
