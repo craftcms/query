@@ -1,6 +1,6 @@
 # Release Notes for Query
 
-## Unreleased
+## 3.1.0 - 2024-03-19
 
 - Added Craft 4 compatibility.
 - Fixed a bug where the query results table could overflow the content pane. ([#30](https://github.com/craftcms/query/pull/30))
