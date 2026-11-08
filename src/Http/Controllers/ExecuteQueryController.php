@@ -6,35 +6,38 @@ namespace CraftCms\Query\Http\Controllers;
 
 use CraftCms\Cms\Translation\Formatter;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 /**
- * Executes the SQL submitted from the Query utility.
+ * Executes the SQL submitted from the Query utility, and flashes the result back to it.
  *
- * @since 2.0
+ * @since 4.0
  */
 class ExecuteQueryController
 {
-    public function __invoke(Request $request, Formatter $formatter): JsonResponse
+    public function __invoke(Request $request, Formatter $formatter): RedirectResponse
     {
         $sql = $request->validate(['sql' => ['present', 'nullable', 'string']])['sql'];
 
         try {
             // Use the write connection, so statements other than SELECT work with read replicas too
             $result = $sql !== null ? DB::select($sql, useReadPdo: false) : [];
+
+            Inertia::flash('query', [
+                'success' => true,
+                'result' => $result,
+                'formattedTotal' => $formatter->asInteger(count($result)),
+            ]);
         } catch (QueryException $e) {
-            return new JsonResponse([
+            Inertia::flash('query', [
                 'success' => false,
                 'error' => $e->getPrevious()?->getMessage() ?? $e->getMessage(),
             ]);
         }
 
-        return new JsonResponse([
-            'success' => true,
-            'result' => $result,
-            'formattedTotal' => $formatter->asInteger(count($result)),
-        ]);
+        return back();
     }
 }

@@ -1,6 +1,6 @@
 <script setup>
   import {computed, ref} from 'vue';
-  import {actionClient, t} from '@craftcms/cp';
+  import {getCpUrl, t} from '@craftcms/cp';
 
   const sql = ref('');
   const executing = ref(false);
@@ -42,28 +42,29 @@
     sql.value = event.target.modelValue ?? '';
   }
 
-  async function execute() {
+  function execute() {
     if (executing.value) {
       return;
     }
 
-    executing.value = true;
-
-    try {
-      const {data} = await actionClient.post(
-        'query/default/execute',
-        {sql: sql.value},
-        {headers: {Accept: 'application/json'}}
-      );
-      response.value = data;
-    } catch (error) {
-      response.value = {
-        success: false,
-        error: error.response?.data?.message ?? error.message,
-      };
-    } finally {
-      executing.value = false;
-    }
+    window.Cp.$router.post(
+      getCpUrl('utilities/query'),
+      {sql: sql.value},
+      {
+        preserveState: true,
+        preserveScroll: true,
+        onStart: () => (executing.value = true),
+        onFinish: () => (executing.value = false),
+        onFlash: (flash) => {
+          if (flash.query) {
+            response.value = flash.query;
+          }
+        },
+        onError: (errors) => {
+          response.value = {success: false, error: Object.values(errors)[0]};
+        },
+      }
+    );
   }
 </script>
 

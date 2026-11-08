@@ -40,11 +40,11 @@ select username from users
 
 ### Routes and action URLs
 
-The `query/default/execute` action URL keeps working, and still takes an `sql` body param. It requires a logged-in user with the “Query” utility permission (`utility:query`).
+The `query/default/execute` action URL was removed. The utility now posts to a control panel route, `POST {cpTrigger}/utilities/query`, through Inertia. The route requires a logged-in user with the “Query” utility permission (`utility:query`), and flashes the result back to the utility as Inertia flash data under `query`. The data has the same shape as before: `{"success": true, "result": [...], "formattedTotal": "..."}`, or `{"success": false, "error": "..."}`.
 
-- JSON requests from guests get a `401` response instead of a `403`.
-- A request without the `sql` param gets a `422` validation error instead of a `400`.
-- Database errors still come back as `{"success": false, "error": "..."}`. The message is the database driver’s error, without Yii’s “The SQL being executed was” suffix.
+If you called the action URL from your own scripts, run the query from your own code with Laravel’s `DB` facade instead.
+
+Database errors no longer include Yii’s “The SQL being executed was” suffix.
 
 ### Templates and Twig
 
