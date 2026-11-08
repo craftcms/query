@@ -1,43 +1,29 @@
 <?php
-/**
- * @link https://craftcms.com/
- * @copyright Copyright (c) Pixel & Tonic, Inc.
- * @license MIT
- */
 
-namespace craft\query;
+declare(strict_types=1);
 
-use craft\events\RegisterComponentTypesEvent;
-use craft\services\Utilities;
-use yii\base\Event;
+namespace CraftCms\Query;
+
+use CraftCms\Cms\Plugin\Plugin as BasePlugin;
+use CraftCms\Cms\Utility\Utility;
+use CraftCms\Query\Utilities\Query;
 
 /**
  * Query plugin.
  *
- * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @since 2.0
  */
-class Plugin extends \craft\base\Plugin
+class Plugin extends BasePlugin
 {
+    /** @var array<class-string<Utility>> */
+    protected array $utilities = [
+        Query::class,
+    ];
+
     /**
-     * @inheritdoc
+     * The Query utility’s Vue component.
      */
-    public function init()
-    {
-        parent::init();
-
-        // Register our query utility.
-        $eventName = defined(sprintf('%s::EVENT_REGISTER_UTILITY_TYPES', Utilities::class))
-            ? Utilities::EVENT_REGISTER_UTILITY_TYPES // Craft 4
-            /** @phpstan-ignore-next-line */
-            : Utilities::EVENT_REGISTER_UTILITIES; // Craft 5+
-
-        Event::on(
-            Utilities::class,
-            $eventName,
-            function(RegisterComponentTypesEvent $event) {
-                $event->types[] = Utility::class;
-            }
-        );
-    }
+    protected array $vite = [
+        'resources/js/cp.js',
+    ];
 }

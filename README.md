@@ -6,7 +6,9 @@ This plugin lets users execute SQL queries and view their results in [Craft CMS]
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
+This plugin requires Craft CMS 6.0 or later and PHP 8.5 or later. It doesn’t need the `craftcms/yii2-adapter` package.
+
+For Craft CMS 4 and 5, use Query 3.x. If you’re upgrading from 3.x, see [UPGRADE.md](UPGRADE.md).
 
 ## Installation
 
@@ -28,9 +30,11 @@ cd /path/to/my-project.test
 composer require craftcms/query
 
 # tell Craft to install the plugin
-./craft install/plugin query
+php artisan craft:plugin:install query
 ```
 
 ## Usage
 
-Execute SQL queries by navigating to **Utilities** → **Query** in the control panel.
+Execute SQL queries by navigating to **Utilities** → **Query** in the control panel. Press Ctrl+Enter (⌘+Enter on macOS) in the SQL field to execute the query.
+
+Users need the “Query” utility permission to use it.

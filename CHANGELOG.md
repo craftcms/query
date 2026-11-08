@@ -1,5 +1,14 @@
 # Release Notes for Query
 
+## Unreleased
+
+- Query now requires Craft CMS 6.0 or later and PHP 8.5 or later, and runs natively on Craft 6 without the `craftcms/yii2-adapter` package.
+- The plugin’s classes moved to the `CraftCms\Query` namespace. See [UPGRADE.md](UPGRADE.md).
+- The Query utility is now a Vue component, with a labeled SQL field.
+- Yii’s `{{%table}}` and `[[column]]` quoting syntax is no longer expanded in queries.
+- Fixed a bug where query results were rendered as HTML.
+- Fixed a bug where the previous results stayed visible after a query returned no rows.
+
 ## 3.1.0.1 - 2026-07-23
 
 - Fixed a typo in the changelog.
