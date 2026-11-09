@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d7fa2c7bc5d8261a91bdfc933fa6b0d",
+    "content-hash": "3cf089bd4fc74170f6775e64f4b7cdb9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -424,17 +424,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "d6f5dbd137f384caf5e0a429714748a18ecc6452"
+                "reference": "feee120083cbc8667b55bf141b676d9530e7c2d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/d6f5dbd137f384caf5e0a429714748a18ecc6452",
-                "reference": "d6f5dbd137f384caf5e0a429714748a18ecc6452",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/feee120083cbc8667b55bf141b676d9530e7c2d5",
+                "reference": "feee120083cbc8667b55bf141b676d9530e7c2d5",
                 "shasum": ""
             },
             "require": {
                 "bacon/bacon-qr-code": "^3.0",
-                "commerceguys/addressing": "^2.1.1",
+                "commerceguys/addressing": "^2.3.0",
                 "composer/semver": "^3.3.2",
                 "craftcms/cms-assets": "self.version",
                 "craftcms/laravel-aliases": "^2.0",
@@ -615,8 +615,8 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2026-11-08T11:30:03+00:00",
-            "published-time": "2026-11-08T11:30:11+00:00"
+            "time": "2026-11-09T15:09:17+00:00",
+            "published-time": "2026-11-09T15:09:27+00:00"
         },
         {
             "name": "craftcms/cms-assets",
@@ -624,12 +624,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms-assets.git",
-                "reference": "60a83032a460d5bf993fd671d95489f0cc222a4b"
+                "reference": "17973259d5727a1e50a1fc85dd90566b889407af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms-assets/zipball/60a83032a460d5bf993fd671d95489f0cc222a4b",
-                "reference": "60a83032a460d5bf993fd671d95489f0cc222a4b",
+                "url": "https://api.github.com/repos/craftcms/cms-assets/zipball/17973259d5727a1e50a1fc85dd90566b889407af",
+                "reference": "17973259d5727a1e50a1fc85dd90566b889407af",
                 "shasum": ""
             },
             "default-branch": true,
@@ -642,8 +642,8 @@
             "support": {
                 "source": "https://github.com/craftcms/cms-assets/tree/6.x"
             },
-            "time": "2026-11-08T10:04:44+00:00",
-            "published-time": "2026-11-08T10:04:51+00:00"
+            "time": "2026-11-09T14:57:06+00:00",
+            "published-time": "2026-11-09T14:57:12+00:00"
         },
         {
             "name": "craftcms/laravel-aliases",
@@ -15827,9 +15827,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "craftcms/cms": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
