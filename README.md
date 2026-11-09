@@ -6,7 +6,7 @@ This plugin lets users execute SQL queries and view their results in [Craft CMS]
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0+ or 5.0.0+ or 6.0.0-alpha.1+ with the `craftcms/yii2-adapter` package.
+This plugin requires Craft CMS 4.0.0+ or 5.0.0+ or 6.0.0-beta.1+ with the `craftcms/yii2-adapter` package.
 
 ## Installation
 
