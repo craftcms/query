@@ -4,6 +4,8 @@ var $spinner = $('#query-spinner');
 var $sql = $('#query-sql');
 var $results = $('#query-result');
 var executing = false;
+// Craft 6 renders the button with its own web component
+var isCraft6 = $submit.is('craft-button');
 
 $sql.on('keydown', function (ev) {
   if (ev.keyCode === Garnish.RETURN_KEY && Garnish.isCtrlKeyPressed(ev)) {
@@ -18,7 +20,7 @@ $form.on('submit', function (ev) {
     return;
   }
 
-  $submit.addClass('active');
+  $submit.addClass('active').prop('loading', isCraft6);
   $spinner.removeClass('hidden');
   executing = true;
 
@@ -26,7 +28,7 @@ $form.on('submit', function (ev) {
     'query/default/execute',
     {sql: $sql.val()},
     function (response, textStatus) {
-      $submit.removeClass('active');
+      $submit.removeClass('active').prop('loading', false);
       $spinner.addClass('hidden');
       executing = false;
 
@@ -75,7 +77,11 @@ $form.on('submit', function (ev) {
             html += '<tbody>' + '</table>';
           }
         } else {
-          html = '<p class="error">' + response.error + '</p>';
+          html = isCraft6
+            ? '<craft-callout variant="danger">' +
+              response.error +
+              '</craft-callout>'
+            : '<p class="error">' + response.error + '</p>';
         }
 
         $results.html(html);

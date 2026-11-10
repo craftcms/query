@@ -7,6 +7,7 @@
 
 namespace craft\query;
 
+use Craft;
 use craft\web\AssetBundle;
 use craft\web\assets\cp\CpAsset;
 use craft\web\View;
@@ -36,7 +37,22 @@ class QueryAsset extends AssetBundle
             'query.min.js',
         ];
 
+        // Craft 6 doesn’t load the legacy control panel styles the utility relies on
+        if (self::isCraft6()) {
+            $this->css = [
+                'query-craft6.css',
+            ];
+        }
+
         parent::init();
+    }
+
+    /**
+     * Returns whether this is Craft 6, running the plugin through the `craftcms/yii2-adapter` package.
+     */
+    public static function isCraft6(): bool
+    {
+        return version_compare(Craft::$app->getVersion(), '6.0.0-alpha', '>=');
     }
 
     /**

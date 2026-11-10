@@ -15,10 +15,16 @@
     }) }}
   </div>
 
-  <div class="flex">
-    <input id="query-submit" type="submit" class="btn submit" value="Execute">
-    <div id="query-spinner" class="spinner hidden"></div>
-  </div>
+  {% if craft6 %}
+    <div class="query-actions">
+      <craft-button id="query-submit" type="submit" variant="accent">Execute</craft-button>
+    </div>
+  {% else %}
+    <div class="flex">
+      <input id="query-submit" type="submit" class="btn submit" value="Execute">
+      <div id="query-spinner" class="spinner hidden"></div>
+    </div>
+  {% endif %}
 </form>
 
 <div id="query-result" class="field tablepane"></div>
