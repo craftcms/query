@@ -1,5 +1,9 @@
 # Release Notes for Query
 
+## 3.2.1 - 2026-11-10
+
+- Query now suggests the `craftcms/yii2-adapter` package, which is required to use it with Craft CMS 6.
+
 ## 3.2.0 - 2026-11-10
 
 - Added support for Craft CMS 6, when the `craftcms/yii2-adapter` package is installed.
