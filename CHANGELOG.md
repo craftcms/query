@@ -1,6 +1,6 @@
 # Release Notes for Query
 
-## Unreleased
+## 3.2.0 - 2026-11-10
 
 - Added support for Craft CMS 6, when the `craftcms/yii2-adapter` package is installed.
 
