@@ -1,6 +1,6 @@
 # Release Notes for Query
 
-## Unreleased
+## 4.0.0 - 2026-11-12
 
 - Query now requires Craft CMS 6.0 or later and PHP 8.5 or later, and runs natively on Craft 6 without the `craftcms/yii2-adapter` package.
 - The plugin’s classes moved to the `CraftCms\Query` namespace. See [UPGRADE.md](UPGRADE.md).
