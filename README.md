@@ -33,13 +33,6 @@ composer require craftcms/query
 php artisan craft:plugin:install query
 ```
 
-On Craft CMS 6, install the `craftcms/yii2-adapter` package alongside the plugin, and install the plugin with Artisan:
-
-```bash
-composer require craftcms/yii2-adapter "craftcms/query:^3.0"
-php artisan craft:plugin:install query
-```
-
 ## Usage
 
 Execute SQL queries by navigating to **Utilities** → **Query** in the control panel. Press Ctrl+Enter (⌘+Enter on macOS) in the SQL field to execute the query.
