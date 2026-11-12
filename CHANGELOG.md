@@ -10,6 +10,14 @@
 - Fixed a bug where query results were rendered as HTML.
 - Fixed a bug where the previous results stayed visible after a query returned no rows.
 
+## 3.2.1 - 2026-11-10
+
+- Query now suggests the `craftcms/yii2-adapter` package, which is required to use it with Craft CMS 6.
+
+## 3.2.0 - 2026-11-10
+
+- Added support for Craft CMS 6, when the `craftcms/yii2-adapter` package is installed.
+
 ## 3.1.0.1 - 2026-07-23
 
 - Fixed a typo in the changelog.
