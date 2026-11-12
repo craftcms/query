@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace CraftCms\Query\Http\Controllers;
 
 use CraftCms\Cms\Translation\Formatter;
+use CraftCms\Cms\Utility\Utilities;
+use CraftCms\Query\Utilities\Query;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -18,6 +20,13 @@ use Inertia\Inertia;
  */
 class ExecuteQueryController
 {
+    public function __construct(Utilities $utilities)
+    {
+        if (! $utilities->checkAuthorization(Query::class)) {
+            abort(403, 'User is not authorized to perform this action.');
+        }
+    }
+
     public function __invoke(Request $request, Formatter $formatter): RedirectResponse
     {
         $sql = $request->validate(['sql' => ['present', 'nullable', 'string']])['sql'];
