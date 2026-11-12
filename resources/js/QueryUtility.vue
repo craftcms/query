@@ -92,7 +92,7 @@
       v-if="response && !response.success"
       variant="danger"
       class="query-error"
-      >{{ response.error }}</craft-callout
+      ><span class="query-error-text">{{ response.error }}</span></craft-callout
     >
 
     <div
@@ -134,6 +134,13 @@
 
   .query-summary:empty {
     margin: 0;
+  }
+
+  /* Keeps the database's line breaks and the caret under the error position.
+     Set on the text, not the callout, so the callout's own markup isn't affected. */
+  .query-error-text {
+    font-family: var(--c-font-mono);
+    white-space: pre-wrap;
   }
 
   .query-results {
