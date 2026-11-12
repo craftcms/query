@@ -34,14 +34,6 @@
     }
   });
 
-  function onSqlChanged(event) {
-    if (event.detail?.initialize) {
-      return;
-    }
-
-    sql.value = event.target.modelValue ?? '';
-  }
-
   function execute() {
     if (executing.value) {
       return;
@@ -74,18 +66,21 @@
       <craft-textarea
         :label="t('SQL', {}, 'query')"
         :help-text="t('Press Ctrl+Enter or ⌘+Enter to execute.', {}, 'query')"
-        .modelValue="sql"
+        .value="sql"
         rows="6"
         monospace
-        @model-value-changed="onSqlChanged"
         @keydown.enter.ctrl.prevent="execute"
         @keydown.enter.meta.prevent="execute"
       >
-        <textarea slot="input" spellcheck="false"></textarea>
+        <textarea
+          slot="input"
+          spellcheck="false"
+          @input="sql = $event.target.value"
+        ></textarea>
       </craft-textarea>
 
       <div class="query-actions">
-        <craft-button type="submit" variant="accent" .loading="executing">
+        <craft-button type="submit" variant="primary" .loading="executing">
           {{ t('Execute', {}, 'query') }}
         </craft-button>
       </div>
